@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Отзывы
+        </h2>
+      </div>
+    </div>
+    <div id="customCarousel2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{% static 'images/dan.jpg' %}" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          Данияр
+                        </h5>
+                        <h6>
+                          Уткильбаев
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      "Мой визит в магазин "HANDTIME" оставил у меня только самые положительные 
+                      впечатления. Я в поисках элегантных часов для особого случая и был приятно удивлен 
+                      выбором и качеством товаров в этом магазине. Персонал был весьма приветлив и образован в
+                       области часов, что помогло мне принять осознанное решение. Они провели детальную консультацию, 
+                       учитывая мои предпочтения и бюджет, и помогли мне выбрать часы, которые идеально подходили моему 
+                       вкусу и стилю. Кроме того, атмосфера магазина была очень уютной и роскошной, что добавило покупке 
+                       особый шарм. Я счастлив с моей покупкой и определенно буду рекомендовать "HANDTIME" 
+                       всем своим друзьям и знакомым в поисках качественных часов и превосходного обслуживания."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {% for i in testimonials %}
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{ i.image.url }}" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          {{i.name}}
+                        </h5>
+                        <h6>
+                          {{ i.username }}
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                    {{ i.text }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#customCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#customCarousel2" data-slide-to="1"></li>
+        <li data-target="#customCarousel2" data-slide-to="2"></li>
+        <li data-target="#customCarousel2" data-slide-to="3"></li>
+      </ol>
+    </div>
+  </section>
+
+  {% endblock %}

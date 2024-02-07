@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+
+</head>
+<body>
+    <h1>{{ watch.brand }} {{ watch.model }}</h1>
+        <b><p>Brand: {{ watch.brand }}</p></b>
+        <b><p>Model: {{ watch.model }}</p></b>
+        <br>
+        {% if watch.base_image %}
+        <img src="{{ watch.base_image.url }}" alt="Watch Image" width="400" height="300">
+        {% endif %}
+        <br>
+        <b><p>Case Material: {{ watch.case_material }}</p></b>
+        <b><p>Color: {{ watch.color }}</p></b>
+        <b><p>Price: ${{ watch.price }}</p></b>
+        <b><p>Release Date: {{ watch.release_date }}</p></b>
+        <b><p>Movement: {{ watch.movement }}</p></b>
+        <b><p>Gender: {{ watch.gender }}</p></b>
+
+        <!-- Добавляем галерею часов снизу -->
+    <div class="additional_images">
+        {% for i in watch.images.all %}
+        <img src="{{ i.image.url }}" alt="Watch Image" width="400" height="350">
+        {% endfor %}
+    </div>
+    
+    <!-- Кнопка назад -->
+        <br>
+        <a href="{% url 'product' %}">
+        <button>Назад</button>
+        </a>
+        <br>
+        <br>
+        
+    </body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="img-box b1">
+              <img src="{% static 'images/a-1' %}.jpg" alt="">
+            </div>
+            <div class="img-box b2">
+              <img src="{% static 'images/a-2' %}.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2>
+              О нас
+            </h2>
+            <p>
+              Добро пожаловать в увлекательный мир времени с нашей компанией – вашим надежным партнером в мире стильных и функциональных часов! Мы являемся лидерами в индустрии часового искусства, предлагая широкий ассортимент высококачественных часов, которые сочетают в себе изысканный дизайн, передовые технологии и непревзойденное качество.
+            </p>
+            <a href="">
+              Читать
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+
+
+{% endblock %}

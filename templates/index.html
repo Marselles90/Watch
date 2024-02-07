@@ -1,0 +1,453 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="slider_section ">
+      <div class="slider_bg_box">
+        <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+      </div>
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="detail-box">
+                    <h1>
+                      СТИЛЬНЫЕ ЧАСЫ
+                    </h1>
+                    <b><p>
+                      Дизайн, воплощенный в каждой детали, отражает последние тренды моды и классические элементы, создавая великолепный баланс между современностью и вечностью.                    
+                    </p></b>
+                    <div class="btn-box">
+                      <a href="{% url 'contact' %}" class="btn1">
+                        Связаться с нами
+                      </a>
+                      <a href="{% url 'about' %}" class="btn2">
+                      О нас  
+                      </a>
+                    </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+          <li data-target="#customCarousel1" data-slide-to="3"></li>
+          <li data-target="#customCarousel1" data-slide-to="4"></li>
+        </ol>
+      </div>
+
+    </section>
+  </div>
+
+
+<section class="service_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/feature-1.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Fast Delivery
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/feature-2.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Free Shiping
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/feature-3.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Best Quality
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/feature-4.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                24x7 Customer support
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="img-box b1">
+              <img src="{% static 'images/a-1.jpg">
+            </div>
+            <div class="img-box b2">
+              <img src="{% static 'images/a-2.jpg' %}" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2>
+              About Our Shop
+            </h2>
+            <p>
+              There are many variations of passages of Lorem Ipsum
+              There are many variations of
+              passages of Lorem Ipsum
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Главная страница мужские часы   -->
+  <section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+          Мужские часы
+        </h2>
+      </div>
+      <div class="product_container">
+        
+        {% for product in male_products %}
+        <div class="box">
+        <div class="box-content">     
+          <div class="img-box">
+            <a href="{% url 'watch_detail' product.id %}">  
+            {% if product.base_image %}
+            <img src="{{ product.base_image.url }}" alt="">
+            {% else %}
+            <img src="{% static 'images/w1.png' %}" alt="">
+            {% endif %}
+            </div>
+            </a>
+            <div class="detail-box">
+              <div class="text">
+                <h6>
+                  {{ product.brand }} {{ product.model }}
+                </h6>
+                <h5>
+                  <span>$</span> {{ product.price }}
+                </h5>
+              </div>
+              <div class="like">
+                <h6>
+                  Like
+                </h6>
+                <div class="star_container">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="btn-box">
+            <a href="">
+              Add To Cart
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      
+      </div>
+    </div>
+  </section>
+
+
+<!-- Главная страница женские часы   -->
+  <section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+           Женские часы
+        </h2>
+      </div>
+      <div class="product_container">
+        {% for product in female_products %}
+        <div class="box">
+        <div class="box-content">
+          <div class="img-box">      
+            <a href="{% url 'watch_detail' product.id %}">    
+            {% if product.base_image %}
+              <img src="{{ product.base_image.url }} " alt="">
+            {% else %}
+              <img src="{% static 'images/w1.png' %}" alt="">
+            {% endif %}        
+            </a>
+            </div>
+            <div class="detail-box">
+              <div class="text">
+                <h6>
+                  {{ product.brand }} {{ product.model }}
+                </h6>
+                <h5>
+                  <span>$</span> {{ product.price }}
+                </h5>
+              </div>
+              <div class="like">
+                <h6>
+                  Like
+                </h6>
+                <div class="star_container">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="btn-box">
+            <a href="">
+              Add To Cart
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+<!-- Главная страница электронные часы   -->
+  <section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+           Электронные часы
+        </h2>
+      </div>
+      <div class="product_container">
+        {% for product in electronic_watch %}
+        <div class="box">
+        <div class="box-content">
+          <div class="img-box">      
+            <a href="{% url 'watch_detail' product.id %}">    
+            {% if product.base_image %}
+              <img src="{{ product.base_image.url }} " alt="">
+            {% else %}
+              <img src="{% static 'images/w1.png' %}" alt="">
+            {% endif %}        
+            </a>
+            </div>
+            <div class="detail-box">
+              <div class="text">
+                <h6>
+                  {{ product.brand }} {{ product.model }}
+                </h6>
+                <h5>
+                  <span>$</span> {{ product.price }}
+                </h5>
+              </div>
+              <div class="like">
+                <h6>
+                  Like
+                </h6>
+                <div class="star_container">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="btn-box">
+            <a href="">
+              Add To Cart
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Обратная связь -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Связаться с нами
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="{% url 'index' %}" method="POST">
+              {% csrf_token %}
+              <div>
+                <input type="text" name="name" placeholder="Ваше имя" />
+              </div>
+              <div>
+                <input type="text" name="phone" placeholder="Телефон" />
+              </div>
+              <div>
+                <input type="email" name="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" name="message" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  Отправить
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1128.2620372550198!2d76.93282209667458!3d43.25787127449445!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836f780e57768f%3A0x3ada0073a96d10f0!2sITC%20Bootcamp!5e0!3m2!1sru!2skz!4v1707111234280!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Отзывы -->
+
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Отзывы
+        </h2>
+      </div>
+    </div>
+    <div id="customCarousel2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{% static 'images/dan.jpg' %}" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          Данияр
+                        </h5>
+                        <h6>
+                          Уткильбаев
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      "Мой визит в магазин "HANDTIME" оставил у меня только самые положительные 
+                      впечатления. Я в поисках элегантных часов для особого случая и был приятно удивлен 
+                      выбором и качеством товаров в этом магазине. Персонал был весьма приветлив и образован в
+                       области часов, что помогло мне принять осознанное решение. Они провели детальную консультацию, 
+                       учитывая мои предпочтения и бюджет, и помогли мне выбрать часы, которые идеально подходили моему 
+                       вкусу и стилю. Кроме того, атмосфера магазина была очень уютной и роскошной, что добавило покупке 
+                       особый шарм. Я счастлив с моей покупкой и определенно буду рекомендовать "HANDTIME" 
+                       всем своим друзьям и знакомым в поисках качественных часов и превосходного обслуживания."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {% for i in testimonials %}
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{ i.image.url }}" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          {{i.name}}
+                        </h5>
+                        <h6>
+                          {{ i.username }}
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                    {{ i.text }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#customCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#customCarousel2" data-slide-to="1"></li>
+        <li data-target="#customCarousel2" data-slide-to="2"></li>
+      </ol>
+    </div>
+  </section>
+
+  {% endblock %}
