@@ -6,8 +6,10 @@ from django.shortcuts import get_object_or_404
 def product_view(request):
     male_products = Watch.objects.filter(gender='male')
     female_products = Watch.objects.filter(gender='female')
+    unisex = Watch.objects.filter(gender='unisex')
     context = {'male_products': male_products,
-               'female_products': female_products}    
+               'female_products': female_products,
+                'electronic_watch': unisex,}    
     return render(request, 'product.html', context)
 
 

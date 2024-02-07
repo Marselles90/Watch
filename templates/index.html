@@ -40,6 +40,7 @@
   </div>
 
 
+<!-- Рекламный баннер -->
 <section class="service_section">
     <div class="container-fluid">
       <div class="row">
@@ -50,10 +51,10 @@
             </div>
             <div class="detail-box">
               <h5>
-                Fast Delivery
+                Быстрая доставка
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+                доставим быстро, до двери
               </p>
             </div>
           </div>
@@ -65,10 +66,10 @@
             </div>
             <div class="detail-box">
               <h5>
-                Free Shiping
+                Бесплатная доставка
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+                стоимость доставки входит в цену часов
               </p>
             </div>
           </div>
@@ -80,10 +81,10 @@
             </div>
             <div class="detail-box">
               <h5>
-                Best Quality
+                Лучшее качество
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+                все товары сертифицированы
               </p>
             </div>
           </div>
@@ -95,10 +96,10 @@
             </div>
             <div class="detail-box">
               <h5>
-                24x7 Customer support
+                Круглосуточная поддержка 
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+                звоните в любое время 24/7
               </p>
             </div>
           </div>
@@ -107,14 +108,15 @@
     </div>
   </section>
 
-
+  
+<!-- Поле о нас на главной странице -->
   <section class="about_section layout_padding">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
           <div class="img_container">
             <div class="img-box b1">
-              <img src="{% static 'images/a-1.jpg">
+              <img src="{% static 'images/a-1.jpg' %}">
             </div>
             <div class="img-box b2">
               <img src="{% static 'images/a-2.jpg' %}" alt="">
@@ -124,15 +126,16 @@
         <div class="col-md-6">
           <div class="detail-box">
             <h2>
-              About Our Shop
+              О нашем магазине
             </h2>
-            <p>
-              There are many variations of passages of Lorem Ipsum
-              There are many variations of
-              passages of Lorem Ipsum
+            <p>  
+              Добро пожаловать в "Часовой Хронометр"!
+              Мы рады приветствовать вас в нашем магазине, где время превращается в искусство. 
+              "Часовой Хронометр" — это не просто место, где вы можете приобрести часы, это место, 
+              где вы можете обнаружить свою уникальную историю в каждой минуте.
             </p>
-            <a href="">
-              Read More
+            <a href="{% url 'about' %}">
+              О нас
             </a>
           </div>
         </div>
@@ -362,7 +365,6 @@
 
 
   <!-- Отзывы -->
-
   <section class="client_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container heading_center">
